@@ -16,7 +16,7 @@ const availabilities = require('./controllers/availabilities.js');
 const bookings = require('./controllers/bookings.js');
 const mybookings = require('./controllers/mybookings.js')
 
-const connection = mysql.createPool({user: 'root', database: 'dialogueApp'})
+const connection = mysql.createPool(process.env.DATABASE_URL)
 const bookingLoader = new DialogueBookingsDataLoader(connection);
 
 // Express initialization
