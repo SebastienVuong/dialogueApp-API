@@ -98,7 +98,7 @@ class TimeSlots {
     }
     
     getFreeSlots(input) {
-        var weekAvailabilities = input.weekAvailabilities;
+        var weekDates = input.weekAvailabilities;
         var weekDates = input.weekDates;
 
         return bookingLoader.getAllBookingsForWeek(weekDates[0])

@@ -30,11 +30,10 @@ module.exports = (timeSlots) => {
                 output.slots = outputSlots;
                 return output;
             });
+            console.log(temp, 'output')
             return temp;
         })
-        .then(data => { // Formatting output data for front-end
-        .then(data=>timeSlots.getFreeSlots(data))
-        .then(data=>{
+        .then(data=>{// Formatting output data for front-end
             var output1 = data.map(day=>{
                 var output2 = {
                     date: day.date,
