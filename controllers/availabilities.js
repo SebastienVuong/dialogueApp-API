@@ -30,7 +30,6 @@ module.exports = (timeSlots) => {
                 output.slots = outputSlots;
                 return output;
             });
-            console.log(temp, 'output')
             return temp;
         })
         .then(data=>{// Formatting output data for front-end
