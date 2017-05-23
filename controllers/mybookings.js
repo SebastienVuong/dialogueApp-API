@@ -9,7 +9,6 @@ module.exports = (bookingLoader) => {
     
     // Endpoint to get all bookings
     mybookings.get('/', (req,res) => {
-        console.log("Hello")
         var sub = req.user.sub;
         
         var rawOutputs;
@@ -19,16 +18,13 @@ module.exports = (bookingLoader) => {
             return DialogueAvailabilitiesDataLoader.getAllUserData();
         })
         .then(data  => {
-            console.log(data)
             // Get all reference arrays
             var professionals = DialogueAvailabilitiesDataLoader.getAllProfessionals(data);
             var specializations = DialogueAvailabilitiesDataLoader.getAllSpecializations(data);
             
             return rawOutputs.map(rawOutput => {
                 // Use userId to find firstName, lastName and locationId in professionals
-                console.log(rawOutput)
                 professionals.forEach(professional=>{
-                    console.log(professional, 'professional')
                     if (professional.id == rawOutput.specialist) {
                         rawOutput.firstName = professional.firstName;
                         rawOutput.lastName = professional.lastName;
@@ -57,7 +53,6 @@ module.exports = (bookingLoader) => {
             });
         })
         .then(bookings => {
-            console.log(bookings)
             return res.status(201).json(bookings);
         })
     })
