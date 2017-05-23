@@ -10,9 +10,9 @@ module.exports = (bookingLoader, timeSlots) => {
 
     // Endpoint to create a booking
     bookings.post('/', (req,res) => {
-        const api_key = 'key-688361c93fe7397aebfb4c178222bc7f';
-        const domain = 'sandbox360d58a0a54e4130994c396babfee2ba.mailgun.org';
-        const from_who = 'Dialogue<teamfrenchfries.mtl@gmail.com>';
+        const api_key = process.env.MAILGUN_KEY;
+        const domain = process.env.MAILGUN_DOMAIN;
+        const from_who = process.env.MAILGUN_FROM;
 
         // Request data extraction
         var date = req.body.date; // 2000-04-13T00:00:00.000Z
