@@ -7,16 +7,16 @@ const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const jwt = require('express-jwt');
 
-// Data loader
-const timeSlots = require('./timeSlots.js');
-const DialogueBookingsDataLoader = require('./lib/dialogue-bookings.js');
-
 // Controllers
 const availabilities = require('./controllers/availabilities.js');
 const bookings = require('./controllers/bookings.js');
 const mybookings = require('./controllers/mybookings.js')
 
 const connection = mysql.createPool(process.env.DATABASE_URL)
+
+// Data loader
+const timeSlots = require('./timeSlots.js')(connection);
+const DialogueBookingsDataLoader = require('./lib/dialogue-bookings.js');
 const bookingLoader = new DialogueBookingsDataLoader(connection);
 
 // Express initialization

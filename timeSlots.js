@@ -1,14 +1,11 @@
-const DialogueAvailabilitiesDataLoader = require('./lib/dialogue-availabilities.js');
+module.exports = function(connection) {
+    const DialogueAvailabilitiesDataLoader = require('./lib/dialogue-availabilities.js');
 const DialogueBookingsDataLoader = require('./lib/dialogue-bookings.js');
 
 const mysql = require('promise-mysql');
 const moment = require('moment');
 
 // Database / booking loader initialization
-var connection = mysql.createPool({
-  user: 'root',
-  database: 'dialogueApp'
-});
 var bookingLoader = new DialogueBookingsDataLoader(connection);
 
 // Generate time differenc
@@ -143,7 +140,10 @@ class TimeSlots {
             });
             return output;
         })
+    
+    }
     }
     
+    return new TimeSlots();
+    
 }
-module.exports = new TimeSlots();
