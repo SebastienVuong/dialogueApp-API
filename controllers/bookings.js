@@ -147,7 +147,7 @@ module.exports = (bookingLoader, timeSlots) => {
                                     </tr>
                                     <tr height="30">
                                         <td align="center">
-                                            ${booking.specialization}: ${booking.firstName}, ${booking.lastName}
+                                            ${booking.specialization}: ${booking.lastName}, ${booking.firstName}
                                         </td>
                                     </tr>
                                     <tr>
