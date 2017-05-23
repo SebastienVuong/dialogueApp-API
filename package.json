@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon -r dotenv/config index.js"
   },
   "repository": {
     "type": "git",
@@ -25,8 +26,10 @@
     "mailgun-js": "^0.10.1",
     "moment": "^2.18.1",
     "morgan": "^1.8.1",
-    "nodemailer": "^4.0.1",
     "promise-mysql": "^3.0.1",
     "superagent": "^3.5.2"
+  },
+  "devDependencies": {
+    "dotenv": "^4.0.0"
   }
 }

@@ -160,7 +160,7 @@ module.exports = (bookingLoader, timeSlots) => {
                             <table  cellpadding="0" cellspacing="0" width="95%" align="center">
                                 <tr>
                                     <td style="color: #0d4a68; font-family: Arial, sans-serif; font-size: 12px; line-height: 20px;">
-                                    Booking link: https://dialogueapp-api-sebastienvuong.c9users.io/bookings/${booking.id}
+                                    Booking link: ${process.env.APP_DOMAIN}/bookings/${booking.id}
                                     </td>
                                 </tr>
                             </table>

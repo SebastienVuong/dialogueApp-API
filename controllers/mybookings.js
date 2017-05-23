@@ -10,6 +10,7 @@ module.exports = (bookingLoader) => {
     // Endpoint to get all bookings
     mybookings.get('/', (req,res) => {
         var sub = req.user.sub;
+        
         var rawOutputs;
         bookingLoader.getAllBookingsForPatient(sub)
         .then(bookings => {
