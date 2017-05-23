@@ -27,6 +27,7 @@
     "mailgun-js": "^0.10.1",
     "moment": "^2.18.1",
     "morgan": "^1.8.1",
+    "node-fetch": "^1.7.0",
     "pm2": "^2.4.6",
     "promise-mysql": "^3.0.1",
     "superagent": "^3.5.2"
